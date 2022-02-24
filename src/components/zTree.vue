@@ -15,6 +15,7 @@ require("@ztree/ztree_v3/js/jquery.ztree.all");
 
 export default {
   props: {
+    treeId: { type: String, default: "tree-001" },
     setting: {
       type: Object,
       require: false,
@@ -32,7 +33,7 @@ export default {
   },
   data() {
     return {
-      ztreeId: "ztree_" + parseInt(Math.random() * 1e10),
+      ztreeId: this.treeId,
       ztreeObj: null,
       list: [],
       ztreeSetting: {
@@ -85,13 +86,6 @@ export default {
           },
           onRightClick: (...arg) => {
             this.$emit("onRightClick", ...arg);
-          },
-        },
-        edit: {
-          enable: true,
-          drag: {
-            isCopy: true,
-            isMove: false,
           },
         },
       },

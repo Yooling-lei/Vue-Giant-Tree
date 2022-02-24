@@ -34,6 +34,7 @@
         />
       </div>
     </div>
+    <ectdIndex />
 
     <div class="toolbar">
       <button class="btn" type="button" @click="update">更新数据</button>
@@ -67,11 +68,13 @@ const simpleData = [
 ];
 const dataQueue = [bigData.data, simpleData];
 
-import tree from "./components/ztree-test.vue";
+import tree from "./components/zTree.vue";
+import ectdIndex from "./ectdExample/index.vue";
 export default {
   name: "app",
   components: {
     tree,
+    ectdIndex,
   },
   data() {
     return {
@@ -91,6 +94,13 @@ export default {
           showIcon: false,
           addHoverDom: this.addHoverDom,
           removeHoverDom: this.removeHoverDom,
+        },
+        edit: {
+          enable: true,
+          drag: {
+            isCopy: true,
+            isMove: false,
+          },
         },
       },
     };
