@@ -1,8 +1,4 @@
-module.exports = {
-  outputDir: 'docs',
-  publicPath: process.env.NODE_ENV === 'production' ?
-    '/Vue-Giant-Tree/' : '/',
-  css: {
-    extract: false
-  }
-}
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true
+})

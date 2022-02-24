@@ -7,7 +7,7 @@ import * as jquery from "jquery";
 let $ = jquery;
 if (window.jQuery) {
   $ = window.jQuery;
-}else{
+} else {
   window.jQuery = $;
 }
 
@@ -59,6 +59,7 @@ export default {
             this.$emit("onDblClick", ...arg);
           },
           onDrag: (...arg) => {
+            console.log("wwwwwwwww");
             this.$emit("onDrag", ...arg);
           },
           onDragMove: (...arg) => {
@@ -84,6 +85,13 @@ export default {
           },
           onRightClick: (...arg) => {
             this.$emit("onRightClick", ...arg);
+          },
+        },
+        edit: {
+          enable: true,
+          drag: {
+            isCopy: true,
+            isMove: false,
           },
         },
       },
